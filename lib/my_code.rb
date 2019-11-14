@@ -21,12 +21,20 @@ def reduce_to_total(source_array, starting_point=0)
 end
 
 def reduce_to_all_true(source_array)
-
-  if source_array.all? do
-    source_array.grep(Integer).reduce(0){ |s,num| s + num}
+  i = 0
+  while i < source_array.length do
+    return false if !source_array[i]
+    i += 1
   end
+  return true
 end
 
 def reduce_to_any_true(source_array)
-  source_array.any?source_array.grep(Integer).reduce(0){ |s,num| s + num}
+
+  i = 0
+while i < source_array.length do
+  return true if source_array[i]
+  i += 1
+end
+return false
 end
