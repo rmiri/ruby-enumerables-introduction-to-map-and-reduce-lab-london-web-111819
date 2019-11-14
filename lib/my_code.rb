@@ -30,5 +30,11 @@ def reduce_to_all_true(source_array)
 end
 
 def reduce_to_any_true(source_array)
-  source_array.any?source_array.grep(Integer).reduce(0){ |s,num| s + num}
+
+  i = 0
+while i < source_array.length do
+  return true if source_array[i]
+  i += 1
+end
+return false
 end
